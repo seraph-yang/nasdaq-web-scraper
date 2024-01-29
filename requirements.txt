@@ -1,0 +1,9 @@
+scikit-learn
+bs4
+requests
+pandas
+streamlit
+numpy
+keras
+matplotlib
+tensorflow
