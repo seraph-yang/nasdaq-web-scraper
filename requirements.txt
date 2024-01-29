@@ -7,5 +7,5 @@ numpy
 keras
 matplotlib
 tensorflow
-lxml
+lxml==4.6.2
 html5lib
