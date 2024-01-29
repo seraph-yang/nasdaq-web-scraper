@@ -56,7 +56,7 @@ if ticker != "":
     new_values = np.reshape(values, (values.shape[0] * values.shape[1], values.shape[2]))
     print(new_values.shape)
 
-    history_table = pd.DataFrame(new_values)
+    history_table = pd.DataFrame(new_values, columns=["Open"])
     history_table = history_table[:-1]
 
     history_table[history_table['Open'].apply(lambda x: isinstance(x, (int, np.int64)))]
