@@ -39,13 +39,13 @@ if ticker != "":
     history = soup.find('table')
     history_table = pd.read_html(str(history))
     print(history_table)
-st.write("hi")
+    st.write("hi")
     values = np.array(history_table)
     print(values)
     new_values = np.reshape(values, (values.shape[0] * values.shape[1], values.shape[2]))
     print(new_values.shape)
 
-st.write(new_values)
+    st.write(new_values)
 
     history_table = pd.DataFrame(new_values, columns=["Date", "Open", "High", "Low", "Close", "Adj. Close", "Volume"])
     history_table = history_table[:-1]
