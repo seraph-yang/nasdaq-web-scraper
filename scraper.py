@@ -59,7 +59,7 @@ if ticker != "":
     history_table = pd.DataFrame(new_values, columns=["Date", "Open", "High", "Low", "Close", "Adj. Close", "Volume"])
     history_table = history_table[:-1]
 
-    history_table = history_table[pd.to_numeric(history_table['Open'], errors='coerce').notnull()]
+    history_table[history_table['Open'].apply(lambda x: isinstance(x, (int, np.int64)))]
     st.write("Scraped data:")
     st.dataframe(history_table)
 
