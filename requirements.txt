@@ -8,3 +8,4 @@ keras
 matplotlib
 tensorflow
 lxml
+html5lib
