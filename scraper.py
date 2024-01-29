@@ -24,27 +24,11 @@ ticker = st.text_input(label="Ticker", placeholder="NVDA")
 
 years = 5
 
-dt= datetime.datetime.now()
-past_date = datetime.datetime(year=dt.year-years, month=dt.month, day=dt.day)
-
-payload = {
-'formatted': 'true',
-'crumb': 'J2oUJNHQwXU',
-'lang': 'en-GB',
-'region': 'GB',
-'includeAdjustedClose': 'true',
-'interval': '1d',
-'period1': '%s' %int(past_date.timestamp()),
-'period2': '%s' %int(dt.timestamp()),
-'events': 'div|split',
-'useYfid': 'true',
-'corsDomain': 'finance.yahoo.com'}
-
 if ticker != "":
     url = f"https://finance.yahoo.com/quote/{ticker}/history?p={ticker}"
     print(url)
 
-    data = requests.get(url, headers={'User-Agent': 'Custom'}, params=payload)
+    data = requests.get(url, headers={'User-Agent': 'Custom'})
     soup = BeautifulSoup(data.text, 'lxml')
 
     history = soup.find('table')
