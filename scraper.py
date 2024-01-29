@@ -45,7 +45,7 @@ if ticker != "":
     print(url)
 
     data = requests.get(url, headers={'User-Agent': 'Custom'}, params=payload)
-    soup = BeautifulSoup(data.text, 'lxml')
+    soup = BeautifulSoup(data.text, 'html.parser')
 
     history = soup.find('table')
     history_table = pd.read_html(str(history))
