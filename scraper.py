@@ -22,18 +22,13 @@ st.write("This site scrapes data from Yahoo Finance and predicts stock prices us
 
 ticker = st.text_input(label="Ticker", placeholder="NVDA")
 
-header={'Accept': '*/*',
-         'Accept-Encoding': 'identity, deflate, compress, gzip',
-         'Authorization': u'Basic dXNlcjpwYXNz',
-         'User-Agent': 'python-requests/0.12.1'}
-
 years = 5
 
 if ticker != "":
     url = f"https://finance.yahoo.com/quote/{ticker}/history?p={ticker}"
     print(url)
 
-    data = requests.get(url, headers=header)
+    data = requests.get(url, headers={'User-Agent': 'Custom'})
     soup = BeautifulSoup(data.text, 'lxml')
 
     history = soup.find('table')
