@@ -6,9 +6,8 @@ built with python and streamlit
 `git clone https://github.com/seraph-yang/nasdaq-web-scraper.git`
 
 ### install libraries
-```
-pip install -r requirements.txt
-```
+`pip install -r requirements.txt`
+
 ### run program
 `python -m streamlit run scraper.py`
 
