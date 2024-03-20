@@ -1,5 +1,5 @@
 # nasdaq web scraper
-scrapes data from yahoo finance and predicts stock price using different machine learning algorithms
+scrapes data from yahoo finance and predicts stock price using a lstm
 built with python and streamlit
 
 ### clone repo
